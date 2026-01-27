@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Split Hero</title>
+    <style>
+        /* =========================================
+           THE VIBE SETTINGS
+           ========================================= */
+        :root {
+            --bg-color: #f4f4f0;
+            --text-color: #1a1a1a;
+            --accent-color: #555555;
+            --font-display: "Times New Roman", Times, serif; 
+            --font-body: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            --container-width: 1300px;
+        }
+
+        html {
+            scroll-behavior: smooth; 
+            scroll-padding-top: 150px; 
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-body);
+            cursor: default;
+        }
+
+        /* =========================================
+           NAVIGATION
+           ========================================= */
+        nav {
+            width: 100%;             
+            position: sticky; 
+            top: 0;
+            z-index: 1000;
+            background-color: rgba(244, 244, 240, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0,0,0,0.1);    
+        }
+
+        .nav-content {
+            width: 100%;          
+            box-sizing: border-box; 
+            padding: 2rem 5rem;   
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-family: var(--font-display);
+            font-size: 1.7rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: var(--text-color);
+            margin-left: 3rem;
+        }
+        
+        .nav-links { display: flex; }
+
+        .nav-links a {
+            margin-left: 2.5rem;
+            text-decoration: none;
+            color: var(--accent-color);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.2s;
+            border-bottom: 1px solid transparent; 
+        }
+
+        .nav-links a:hover {
+            color: var(--text-color);
+            border-bottom: 1px solid var(--text-color);
+        }
+
+        /* =========================================
+       HOME SPLIT SECTION
+       ========================================= */
+        .home-split {
+            display: flex;          
+            width: 100%;            
+            height: 90vh;           
+            border-bottom: 1px solid rgba(0,0,0,0.1); 
+        }
+
+        /* LEFT SIDE (The Image) */
+        .home-image-side {
+            flex: 1.4;              /* Takes ~60% of width */
+            background-image: url('images/home-pfp.jpg'); 
+            background-size: cover;
+            background-position: center; 
+        }
+
+        /* RIGHT SIDE (The Text) */
+        .home-text-side {
+            flex: 1.2;                /* Takes remaining space */
+            display: flex;
+            
+            /* IMPORTANT: Stacks the Title and Bio vertically */
+            flex-direction: column; 
+            
+            /* Aligns them to the start (top-left) */
+            align-items: flex-start;
+            justify-content: flex-start;
+            
+            /* Spacing adjustments */
+            padding-top: 15rem;     /* Lowers the text group */
+            padding-left: 3rem;     /* Pushes text away from image */
+            
+            background-color: var(--bg-color);
+        }
+
+        .home-text-side h1 {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            margin: -3rem 0 0 0;  /* Tighten space above title */
+            line-height: 1.2;
+        }
+
+        /* BIO PARAGRAPH STYLE */
+        .home-bio {
+            font-family: "Monaco", monospace; /* Monospace font for a techy vibe */
+            font-size: 1.2rem;      
+            line-height: 1.6;       
+            color: var(--accent-color);
+            max-width: 600px;       /* Keeps the line length readable */
+            margin-top: 1.5rem;     /* Gap between Name and Bio */
+        }
+
+        .highlight-word {
+        font-family: "Courier New", Courier, monospace; /* Change font */
+        color: #1468a9;        /* Change to Pink (or any hex code) */
+        font-size: 4rem;       /* Make it bigger than the rest */
+        font-weight: bold;
+        }
+
+        .my-name {
+            color: #555555;        /* Dark Grey */
+            text-decoration: underline; /* Add underline */
+            font-style: italic;    /* Make it italic */
+        }
+
+        /* Style for "computer engineer" inside the paragraph */
+        .accent-text {
+            color: #555555;        /* Pure black to stand out from grey text */
+            font-weight: bold;     /* Make it bold */
+            font-family: "Monaco", monospace; /* Monospace font */
+        }
+
+        /* THE BUTTON STYLE */
+        .home-btn {
+            display: inline-block;
+            
+            /* CHANGE THIS LINE */
+            margin-top: 10px;           /* Was 2rem. Now strictly 10px space. */
+            
+            padding: 1rem 2.5rem;       
+            background-color: var(--text-color); 
+            color: var(--bg-color);              
+            border: 1px solid var(--text-color); 
+            text-decoration: none;      
+            text-transform: uppercase;  
+            font-size: 0.9rem;
+            font-family: var(--font-body);
+            letter-spacing: 1px;
+            transition: all 0.3s ease;  
+        }
+
+        /* HOVER EFFECT */
+        .home-btn:hover {
+            background-color: transparent; /* Remove background */
+            color: var(--text-color);      /* Make text black */
+            cursor: pointer;
+        }
+
+        /* Mobile Fix: Stack them on small screens */
+        @media (max-width: 768px) {
+            .home-split {
+                flex-direction: column; /* Stack top to bottom */
+                height: auto;
+            }
+            .home-image-side {
+                height: 50vh;           /* Image takes half screen on mobile */
+            }
+            .nav-content {
+                padding: 1.5rem;
+            }
+        }
+
+
+        /* =========================================
+           MAIN CONTAINER & SECTIONS
+           ========================================= */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;       
+            padding: 0 2rem;      
+        }
+
+        .section-label {
+            font-family: var(--font-body);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-color);
+            margin-top: 6rem; 
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* PROJECT LIST */
+        .project-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            
+        }
+
+        .project-item {
+            border-top: 1px solid #ccc;
+            padding: 2rem 0;
+            transition: opacity 0.3s;
+        }
+        
+        .project-item a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .project-item span.category {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            color: var(--accent-color);
+            text-transform: uppercase;
+        }
+
+        /* WRAPPER: Holds the Title and Description together on the left */
+        .project-info {
+            display: flex;
+            flex-direction: column; /* Stacks them vertically */
+            gap: 0.5rem;            /* Space between Title and Description */
+        }
+
+        /* STYLE FOR THE NEW DESCRIPTION */
+        .project-description {
+            font-family: var(--font-body); /* Use the readable sans-serif font */
+            font-size: 1rem;
+            color: var(--accent-color);    /* Use the grey accent color */
+            font-weight: normal;
+            max-width: 700px;              /* Prevents it from hitting the category */
+            line-height: 1.4;
+        }
+
+        /* OPTIONAL: Adjust the title line-height so it sits tighter to the description */
+        .project-item .title {
+            line-height: 1;
+        }
+
+        .project-item:last-child {
+            border-bottom: 1px solid #ccc;
+        }
+
+        .project-list:hover .project-item { opacity: 0.3; }
+        .project-list .project-item:hover { opacity: 1; }
+
+        /* FLOATING IMAGE */
+        .hover-reveal-img {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 320px;
+            height: 240px; 
+            object-fit: cover;
+            pointer-events: none; 
+            opacity: 0;
+            transform: scale(0.9) translateY(10px);
+            transition: opacity 0.3s, transform 0.3s;
+            z-index: 10;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15); 
+        }
+
+        .hover-reveal-img.active {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+
+        #about p {
+            font-size: 1.5rem;
+            line-height: 1.6;
+            max-width: 700px;
+            font-family: var(--font-display);
+        }
+
+        
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-content">
+            <a href="#" class="nav-logo">Mandy Liu</a>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#tech">Technical Development</a>
+                <a href="#digital">Digital Design</a>
+                <a href="#gallery">Art Gallery</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="home-split" id="home">
+        <div class="home-image-side"></div>
+        
+        <div class="home-text-side">
+            <h1> 
+                Hey, this is                 
+                <span class="highlight-word">Mandy</span> !
+            </h1>
+            
+            <p class="home-bio">
+                I enjoy making hands-on projects that mix technology and creativity. I care a lot about how people experience and interact with the projects that I build.
+            </p>
+            
+            <a href="#tech" class="home-btn">Learn More</a>
+
+        </div>
+
+    </header>
+
+    
+
+
+    <div class="container">
+
+        <span class="section-label" id="tech">01 — Technical Development</span>
+        <ul class="project-list">
+            
+            <li class="project-item">
+                <a href="tech_pages/robot-dog.html" data-image="images/robot-dog.jpg">
+                    <div class="project-info">
+                        <span class="title">Command-Controlled Robot Dog</span>
+                        <span class="project-description">Using VLM to interpret natural language commands for quadruped movement.</span>
+                    </div>
+                    <span class="category">Academic Research</span>
+                </a>
+            </li>
+
+            <li class="project-item">
+                <a href="tech_pages/parkinson.html" data-image="images/park.jpg">
+                    <div class="project-info">
+                        <span class="title">Parkinson Tremor Detection</span>
+                        <span class="project-description">A wearable device that tracks and analyzes hand tremors in real-time.</span>
+                    </div>
+                    <span class="category">Embedded Systems</span>
+                </a>
+            </li>
+
+            <li class="project-item">
+                <a href="tech_pages/spotify.html" data-image="images/roc-curve.jpg">
+                    <div class="project-info">
+                        <span class="title">Spotify Genre Classification</span>
+                        <span class="project-description">Machine learning model analyzing audio features to predict music genres.</span>
+                    </div>
+                    <span class="category">Machine Learning</span>
+                </a>
+            </li>
+
+            <li class="project-item">
+                <a href="tech_pages/ekg.html" data-image="images/ekg.jpg">
+                    <div class="project-info">
+                        <span class="title">EKG Monitor Device</span>
+                        <span class="project-description">Portable heart rate monitor interfacing with a custom web dashboard.</span>
+                    </div>
+                    <span class="category">Electronics</span>
+                </a>
+            </li>
+
+        </ul>
+
+        <span class="section-label" id="digital">02 — Digital Design</span>
+        <ul class="project-list">
+            <li class="project-item">
+                <a href="digital_pages/groovy-derby.html" data-image="images/groovy.jpg">
+                    <div class="project-info">
+                        <span class="title">Groovy Derby</span>
+                        <span class="project-description">Fun two-player collaborative web browser game featuringcustom built controllers.</span>
+                    </div>
+
+                    <span class="category">p5js</span>
+                </a>
+            </li>
+            <li class="project-item">
+                <a href="digital_pages/sesame-hood.html" data-image="images/sesame-hood.jpg">
+                    <div class="project-info">
+                        <span class="title">Sesame's Hood</span>
+                        <span class="project-description">Custom made home for my cat (Sesame) with a heating pad, hammock, and toy shelf.</span>
+                    </div>
+                    
+                    <span class="category">CNC || Laser Cutting</span>
+                </a>
+            </li>
+            <li class="project-item">
+                <a href="digital_pages/crystal-tide.html" data-image="images/crystal.jpg">
+                    <div class="project-info">
+                        <span class="title">Crystal Tide</span>
+                        <span class="project-description">Soap dish reflecting ongoing issues related to ocean pollution and cleanup.</span>
+                    </div>
+                    <span class="category">3D Design</span>
+                </a>
+            </li>
+            <li class="project-item">
+                <a href="digital_pages/exoskin.html" data-image="images/exoskin.jpg">
+                    <div class="project-info">
+                        <span class="title">Exoskin</span>
+                        <span class="project-description">Arm band accessories inspired by the structure of bones.</span>
+                    </div>
+
+                    <span class="category">Wearables</span>
+                </a>
+            </li>
+        </ul>
+
+        <span class="section-label" id="gallery">03 — Art Gallery</span>
+        <ul class="project-list">
+            <li class="project-item">
+                <a href="art_pages/tachi-boba-tea-shop.html" data-image="images/boba-sign.jpg">
+                    <div class="project-info">
+                        <span class="title">Taichi Bubble Tea Shop</span>
+                        <span class="project-description">Bubble tea shop signs used to direct customers around the store.</span>
+                    </div>
+
+                    <span class="category">Acrylic Paint</span>
+                </a>
+            </li>
+            <li class="project-item">
+                <a href="art_pages/snake-and-flowers.html" data-image="images/snake-flower.jpg">
+                    <div class="project-info">
+                        <span class="title">Snake & Flowers</span>
+                        <span class="project-description">Miniture sculpture made out of air-dry clay of a snake coiled around flowers.</span>
+                    </div>                    
+                    <span class="category">3D Sculpture</span>
+                </a>
+            </li>
+            <li class="project-item">
+                <a href="art_pages/skink-in-spring.html" data-image="images/skink.jpg">
+                    <div class="project-info">
+                        <span class="title">Skink in Spring</span>
+                        <span class="project-description">Portrait of a blue-tongued skink surrounded by wild flowers and forage.</span>
+                    </div>  
+
+                    <span class="category">Acrylic Paint</span>
+                </a>
+            </li>
+            <li class="project-item">
+                <a href="art_pages/tree-frog.html" data-image="images/frog.jpg">
+                    <div class="project-info">
+                        <span class="title">Tree Frog Stare</span>
+                        <span class="project-description">Realistic oil pastel of a tree frog perched on a leaf.</span>
+                    </div>  
+                    
+                    <span class="category">Oil Pastel</span>
+                </a>
+            </li>
+        </ul>
+
+        <span class="section-label" id="about">04 — About Me</span>
+        <section>
+            <p>
+                I’m an computer engineer from NYU Shanghai who enjoys building hands-on, human-centered projects. My work combines software, hardware, and design, and I’m most interested in how technology can bring people together and improve everyday experiences. I like environments where ideas are tested quickly, iterated often, and shaped by user interaction.
+                <br><br>
+
+                I’ve worked on projects ranging from collaborative games with custom-built controllers to machine learning models for food safety and robotic systems that respond to people in natural ways. I’m drawn to making things that are interactive, and thoughtful — whether that’s a playful installation or a practical tool. At the core of everything I build is a desire to create work that is practical, technical, and a little bit fun.
+            </p>
+            <br>
+
+            <a href="assets/Liu_Mandy_Resume.pdf" 
+                target="_blank" 
+                style="color: var(--text-color); border-bottom: 1px solid black; text-decoration: none;">
+                View Resume PDF ↗
+            </a>
+
+        </section>
+
+        <span class="section-label" id="contact">05 — Find me @</span>
+        <section>
+            <p>
+                Email: mandyliu040@gmail.com <br>
+                LinkedIn: <a href="https://www.linkedin.com/in/mandy-liu-494a70263" target="_blank">https://www.linkedin.com/in/mandy-liu-494a70263 </a><br>
+                GitHub: <a href="https://github.com/yamdn" target="_blank">https://github.com/yamdn</a> <br>
+            </p>
+        </section>
+
+    </div>
+
+    <img src="" alt="Project Preview" class="hover-reveal-img" id="reveal-img">
+
+    <script>
+        const projectItems = document.querySelectorAll('.project-item a');
+        const revealImg = document.getElementById('reveal-img');
+
+        document.addEventListener('mousemove', (e) => {
+            revealImg.style.left = e.clientX + 15 + 'px';
+            revealImg.style.top = e.clientY + 15 + 'px';
+        });
+
+        projectItems.forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                revealImg.src = item.getAttribute('data-image');
+                revealImg.classList.add('active');
+            });
+            item.addEventListener('mouseleave', () => {
+                revealImg.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
