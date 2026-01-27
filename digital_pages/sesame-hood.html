@@ -155,15 +155,14 @@
         .video-container {
             position: relative;
             width: 100%;
-            /* Change 1000px to something smaller like 700px */
-            max-width: 900px; 
-            
+            max-width: 800px; /* A nice balanced size */
             margin: 3rem auto;           
-            padding-bottom: 39.37%; /* Adjusted ratio for a smaller feel, or keep 56.25% for 16:9 */
+            padding-bottom: 56.25%; /* THE FIX: Perfect 16:9 ratio */
             height: 0;
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            background: #000; /* Makes it look cleaner while loading */
         }
 
         .video-container iframe {
