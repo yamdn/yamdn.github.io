@@ -305,7 +305,7 @@
             font-family: var(--font-display);
         }
 
-        body::after {
+        /* body::after {
             position: absolute;
             width: 0;
             height: 0;
@@ -326,7 +326,7 @@
                 url("../images/snake-flower.jpg") 
                 url("../images/skink.jpg") 
                 url("../images/frog.jpg");
-        }
+        } */
         
 
     </style>
@@ -551,6 +551,20 @@
                 revealImg.classList.remove('active');
             });
         });
+    </script>
+
+    <script>
+    const imagesToPreload = [
+        "images/robot-dog.jpg", "images/park.jpg", "images/roc-curve.jpg", 
+        "images/ekg.jpg", "images/groovy.jpg", "images/sesame-hood.jpg",
+        "images/crystal.jpg", "images/exoskin.jpg", "images/boba-sign.jpg",
+        "images/snake-flower.jpg", "images/skink.jpg", "images/frog.jpg"
+    ];
+
+    imagesToPreload.forEach(image => {
+        const img = new Image();
+        img.src = image;
+    });
     </script>
 </body>
 
