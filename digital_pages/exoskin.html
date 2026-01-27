@@ -153,16 +153,30 @@
         }
 
         .video-container {
+            position: relative;
             width: 100%;
-            margin: 3rem 0;
+            /* 1. This matches your --text-width exactly */
+            max-width: var(--text-width); 
+            
+            /* 2. 'auto' centers it, '2rem 0' gives it space top/bottom */
+            margin: 2rem auto;           
+            
+            /* 3. This is the magic 16:9 number that removes black bars */
+            padding-bottom: 56.25%; 
+            
+            height: 0;
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
-        .video-container video {
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            display: block;
+            height: 100%;
+            border: 0;
         }
     </style>
 </head>
@@ -190,9 +204,7 @@
         </header>
 
         <div class="video-container">
-            <video controls poster="../images/park.jpg">
-                <source src="../assets/parkinson-demo.mp4" type="video/mp4">
-            </video>
+            <iframe src="https://www.youtube.com/embed/h1AZZKdq5Dw" title="Embedded Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
         
         Visit the <a href="https://github.com/yamdn/Embedded-Challenge-Parkinson-Disease/tree/main" target="_blank">GitHub repo↗</a> for this project
