@@ -151,18 +151,23 @@
         .next-link:hover {
             font-style: italic; /* Subtle timeless interaction */
         }
-
+        .
         .video-container {
-            width: 100%;
-            margin: 3rem 0;
-            border-radius: 8px;
+            position: relative;
+            width: 100%;            /* Fits the width of your column */
+            padding-bottom: 56.25%; /* This creates a 16:9 aspect ratio box */
+            height: 0;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 8px;     /* Optional: matches your design */
         }
 
-        .video-container video {
-            width: 100%;
-            display: block;
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;            /* Stretches to fill the container */
+            height: 100%;           /* Stretches to fill the container */
+            border: 0;
         }
     </style>
 </head>
