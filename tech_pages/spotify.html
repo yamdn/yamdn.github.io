@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Name - Case Study</title>
+    <style>
+        /* =========================================
+           SHARED VIBE SETTINGS (SAME AS HOME)
+           ========================================= */
+        :root {
+            --bg-color: #f4f4f0;
+            --text-color: #1a1a1a;
+            --accent-color: #555555;
+            --font-display: "Times New Roman", Times, serif; 
+            --font-body: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            --container-width: 1000px; /* Standard width */
+            --text-width: 1000px;      /* Narrower width for reading comfort */
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-body);
+            line-height: 1.6;
+        }
+
+        /* NAVIGATION (SIMPLIFIED FOR FOCUS) */
+        nav {
+            padding: 2rem;
+            position: fixed; /* Keeps "Back" button always visible */
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: var(--bg-color); /* Hides content scrolling under it */
+            z-index: 100;
+        }
+
+        .nav-back {
+            text-decoration: none;
+            color: var(--text-color);
+            font-family: var(--font-body);
+            font-weight: bold;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid var(--text-color);
+            padding: 10px 20px;
+            border-radius: 50px;
+            transition: all 0.3s;
+        }
+
+        .nav-back:hover {
+            background: var(--text-color);
+            color: var(--bg-color);
+        }
+
+        /* MAIN CONTENT CONTAINER */
+        .case-study {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem 2rem; /* Top padding clears the fixed nav */
+        }
+
+        /* 1. THE METADATA HEADER */
+        .project-header {
+            margin-bottom: 4rem;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 2rem;
+        }
+
+        .project-title {
+            font-family: var(--font-display);
+            font-size: 4rem;
+            margin: 0 0 1rem 0;
+            line-height: 1.1;
+        }
+
+        .project-meta {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 3 Columns for info */
+            gap: 2rem;
+            margin-top: 2rem;
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+        }
+
+        .meta-label {
+            display: block;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+            font-size: 0.75rem;
+        }
+
+        /* 2. THE NARRATIVE CONTENT */
+        .content-block {
+            max-width: var(--text-width); /* Narrower for readability */
+            margin: 0 0 3rem 0; /* Align left standard, or auto for center */
+        }
+
+        h2 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+
+        /* IMAGES */
+        .full-width-img {
+            width: 100%;
+            height: auto;
+            margin: 3rem 0;
+            border-radius: 4px;
+            display: block;
+        }
+
+        /* OPTIONAL: FOR CODING PROJECTS */
+        code {
+            background: #e0e0e0;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.9em;
+        }
+
+        /* 3. THE FOOTER NAVIGATION */
+        .next-project {
+            margin-top: 6rem;
+            padding-top: 3rem;
+            border-top: 1px solid #ccc;
+            text-align: right;
+        }
+
+        .next-link {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            text-decoration: none;
+            color: var(--text-color);
+        }
+        
+        .next-link:hover {
+            font-style: italic; /* Subtle timeless interaction */
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html#tech" class="nav-back">← Back to Portfolio</a>
+    </nav>
+
+    <article class="case-study">
+        
+        <header class="project-header">
+            <h1 class="project-title">Spotify Genre Classification</h1>
+            
+            <div class="project-meta">
+                <div>
+                    <span class="meta-label">Role</span>
+                    Developer || Individual
+                </div>
+                <div>
+                    <span class="meta-label">Tools</span>
+                    Pandas, Numpy, pyTorch, Jupiter Notebook
+                </div>
+            </div>
+        </header>
+
+        <img src="../images/roc-curve.jpg" alt="ROC Curve" class="full-width-img">
+        Visit the <a href="https://github.com/yamdn/Spotify-Genre-Classification" target="_blank">GitHub repo↗</a> for this project
+
+        <div class="content-block">
+            <h2>The Challenge</h2>
+            <p>
+                Spotify provides an API that exposes detailed audio features for each song, including attributes like tempo, energy, and danceability. 
+                In this project, we used these features from a dataset of 50,000 randomly selected songs to train a model that predicts the genre of 
+                a song. By analyzing patterns in these audio characteristics, the system learns how different genres tend to sound and can classify 
+                new songs based on their musical features.           
+             </p>
+
+            <h2>The Approach</h2>
+            <p>
+                First, I focused on preparing the dataset so the model could learn from meaningful information. I removed text-based fields like artist 
+                and track names since they don’t help a model identify musical style. I then handled missing and invalid values by predicting them from 
+                related audio features, rather than using simple averages, because song features are often skewed and interrelated. Categorical features 
+                were encoded, numeric values were scaled where appropriate, and the data was split into training and testing sets to ensure fair evaluation 
+                without data leakage.
+            </p>
+            <p>
+                Next, I explored the structure of the data using dimensionality reduction techniques to better understand how genres relate to one another. 
+                PCA and t-SNE were used to visualize patterns and feature importance, revealing that many genres overlap and share similar characteristics. 
+                These visualizations showed that features like popularity had strong influence, while others contributed less, and that higher-dimensional 
+                representations were needed to capture meaningful differences between genres.            
+            </p>
+            <p>
+                Finally, I trained a Random Forest classifier to predict music genres, since it handles nonlinear relationships and high-dimensional data well. 
+                I tested multiple variations of the dataset, including standardized and reduced versions, and found that the model performed best using the 
+                original feature set without dimensionality reduction. While the model achieved a strong AUC score, the overlapping nature of genres limited 
+                accuracy, suggesting that additional data or improved feature extraction could further improve performance.
+            </p>
+        </div>
+
+        <div class="content-block">
+            <h2>The Outcome</h2>
+            <p>
+                The project showed that Spotify’s audio features can be used to predict a song’s genre, even with overlapping characteristics across categories. 
+                Using a Random Forest classifier on the unstandardized dataset, the model achieved the highest AUC score of 0.9335, indicating 
+                strong overall predictive power. However, the accuracy and precision of 0.5658 revealed that genre overlap still made exact classification challenging. 
+                Despite this, the results demonstrate that the preprocessing and modeling approach was effective, and further improvements in feature extraction or 
+                additional training data could help increase accuracy and precision.            
+            </p>
+        </div>
+
+        <div class="next-project">
+            <span class="meta-label">Next Project</span>
+            <a href="../tech_pages/ekg.html" class="next-link">EKG Monitor Device →</a>
+        </div>
+
+    </article>
+
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Name - Case Study</title>
+    <style>
+        /* =========================================
+           SHARED VIBE SETTINGS (SAME AS HOME)
+           ========================================= */
+        :root {
+            --bg-color: #f4f4f0;
+            --text-color: #1a1a1a;
+            --accent-color: #555555;
+            --font-display: "Times New Roman", Times, serif; 
+            --font-body: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            --container-width: 1000px; /* Standard width */
+            --text-width: 1000px;      /* Narrower width for reading comfort */
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-body);
+            line-height: 1.6;
+        }
+
+        /* NAVIGATION (SIMPLIFIED FOR FOCUS) */
+        nav {
+            padding: 2rem;
+            position: fixed; /* Keeps "Back" button always visible */
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: var(--bg-color); /* Hides content scrolling under it */
+            z-index: 100;
+        }
+
+        .nav-back {
+            text-decoration: none;
+            color: var(--text-color);
+            font-family: var(--font-body);
+            font-weight: bold;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid var(--text-color);
+            padding: 10px 20px;
+            border-radius: 50px;
+            transition: all 0.3s;
+        }
+
+        .nav-back:hover {
+            background: var(--text-color);
+            color: var(--bg-color);
+        }
+
+        /* MAIN CONTENT CONTAINER */
+        .case-study {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 8rem 2rem 4rem 2rem; /* Top padding clears the fixed nav */
+        }
+
+        /* 1. THE METADATA HEADER */
+        .project-header {
+            margin-bottom: 4rem;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 2rem;
+        }
+
+        .project-title {
+            font-family: var(--font-display);
+            font-size: 4rem;
+            margin: 0 0 1rem 0;
+            line-height: 1.1;
+        }
+
+        .project-meta {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 2 Columns for info */
+            gap: 2rem;
+            margin-top: 2rem;
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+        }
+
+        .meta-label {
+            display: block;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+            font-size: 0.75rem;
+        }
+
+        /* 2. THE NARRATIVE CONTENT */
+        .content-block {
+            max-width: var(--text-width); /* Narrower for readability */
+            margin: 0 0 3rem 0; /* Align left standard, or auto for center */
+        }
+
+        h2 {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+
+        /* IMAGES */
+        .full-width-img {
+            width: 100%;
+            height: auto;
+            margin: 3rem 0;
+            border-radius: 4px;
+            display: block;
+        }
+
+        /* OPTIONAL: FOR CODING PROJECTS */
+        code {
+            background: #e0e0e0;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 0.9em;
+        }
+
+        /* 3. THE FOOTER NAVIGATION */
+        .next-project {
+            margin-top: 6rem;
+            padding-top: 3rem;
+            border-top: 1px solid #ccc;
+            text-align: right;
+        }
+
+        .next-link {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            text-decoration: none;
+            color: var(--text-color);
+        }
+        
+        .next-link:hover {
+            font-style: italic; /* Subtle timeless interaction */
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="../index.html#tech" class="nav-back">← Back to Portfolio</a>
+    </nav>
+
+    <article class="case-study">
+        
+        <header class="project-header">
+            <h1 class="project-title">Command-Controlled Robot Dog </h1>
+            
+            <div class="project-meta">
+                <div>
+                    <span class="meta-label">Project Type</span>
+                    Capstone Project || Individual
+                </div>
+                <div>
+                    <span class="meta-label">Tools</span>
+                    Unitree Go2 Robot, MuJoCo, Python, Qwen3, YOLOv8
+                </div>
+                
+            </div>
+        </header>
+
+        <div style="position: relative; width: 100%; height: 0; padding-top: 56.2500%;
+        padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
+        border-radius: 8px; will-change: transform;">
+        <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+            src="https://www.canva.com/design/DAG7UIrfCvs/52jPG44h0xPjDO_DW5yGlg/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+        </iframe>
+        </div>
+        <a href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAG7UIrfCvs&#x2F;52jPG44h0xPjDO_DW5yGlg&#x2F;view?utm_content=DAG7UIrfCvs&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener"></a>
+        
+        <div class="content-block">
+            <a href="../assets/Capstone_Command-Controlled Robot Dog Using.pdf" 
+                target="_blank" 
+                style="color: var(--text-color); border-bottom: 1px solid black; text-decoration: none;">
+                View My Capstone Paper Here! ↗
+            </a>
+        </div>
+
+        <div class="content-block">
+            <h2>The Challenge</h2>
+            <p>
+                This project investigates the development of a robotic dog (Go2 Unitree Systems) capable of 
+                executing high-level semantic goals through the integration of a hierarchical Vision-Language
+                Action (VLA) Pipeline. A key challenge in this domain lies in bridging the gap between the
+                VLM’s powerful semantic reasoning and the robot’s ability to perform real-time safe action within its physical environment. 
+                
+                <br><br>
+                Current limitations of direct VLM integration include high inference latency and the absence of reliable depth awareness necessary 
+                for collision avoidance. At present, the robotic dog functions primarily through remote control. Hence, the goal is to achieve a 
+                fully autonomous robotic dog capable of navigating and identifying persons in its environment. 
+            </p>
+
+            <h2>The Approach</h2>
+            <p>
+                The system was designed with two parts: a “Slow Brain” and a “Fast Brain,” each handling a different kind of thinking. The Slow Brain (Qwen3)
+                ran on a separate server and was responsible for higher-level reasoning, like understanding images and instructions. Because this kind of 
+                thinking takes more time, the robot sent images to the server through an API and received general guidance, such as where to move or what 
+                to look for. On the robot itself, the Fast Brain (Yolov8) ran locally to control movement. This part handled the motors and safety checks using 
+                onboard sensors, making sure the robot could react immediately and move safely without waiting for the slower server.
+            </p>
+            <p>
+                To connect these two parts, a control script ran directly on the robot. It processed camera input in real time, allowing the robot to quickly
+                detect people and avoid obstacles as it moved. At the same time, it periodically sent images to the Slow Brain to get broader navigation goals, 
+                like searching for a nearby person. Instead of relying on complicated training methods, the robot was taught through examples: it was manually 
+                driven while recording what it saw and how it moved. These examples helped the system learn how to explore spaces and approach people naturally. 
+                Together, this setup allowed the robot to move safely, understand its surroundings, and interact with people in a smooth and intelligent way.
+            </p>
+        </div>
+
+        <div class="content-block">
+            <h2>The Outcome</h2>
+            <p>
+                The project successfully proved that splitting robot control into a "Slow Brain" for planning and a "Fast Brain" for reflexes creates a system that 
+                is both smart and safe. The robot autonomously searched for and greeted humans with a 0% collision rate, validating that simple depth sensors can 
+                effectively override slow AI decisions to prevent accidents. Additionally, the system learned these complex social behaviors using only a small 
+                dataset of examples, demonstrating that advanced robotic intelligence does not require massive training resources. While the movement had minor 
+                pauses due to processing time, the approach effectively solved the challenge of making slow, powerful AI usable in the real world.
+            </p>
+        </div>
+
+        <div class="next-project">
+            <span class="meta-label">Next Project</span>
+            <a href="../tech_pages/parkinson.html" class="next-link">Parkinson Tremor Detection →</a>
+        </div>
+
+    </article>
+
+</body>
+</html>
