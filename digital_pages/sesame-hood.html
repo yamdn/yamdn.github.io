@@ -151,22 +151,25 @@
         .next-link:hover {
             font-style: italic; /* Subtle timeless interaction */
         }
-        .
+
         .video-container {
             position: relative;
-            width: 100%;            /* Fits the width of your column */
-            padding-bottom: 56.25%; /* This creates a 16:9 aspect ratio box */
+            width: 100%;
+            max-width: var(--text-width); /* Matches your narrative text width */
+            margin: 3rem auto;           /* 'auto' on left/right centers the block */
+            padding-bottom: 56.25%;      /* Standard 16:9 Aspect Ratio */
             height: 0;
+            border-radius: 8px;
             overflow: hidden;
-            border-radius: 8px;     /* Optional: matches your design */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
         .video-container iframe {
             position: absolute;
             top: 0;
             left: 0;
-            width: 100%;            /* Stretches to fill the container */
-            height: 100%;           /* Stretches to fill the container */
+            width: 100%;
+            height: 100%;
             border: 0;
         }
     </style>
