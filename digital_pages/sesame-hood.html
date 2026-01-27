@@ -155,14 +155,19 @@
         .video-container {
             position: relative;
             width: 100%;
-            max-width: 800px; /* A nice balanced size */
-            margin: 3rem auto;           
-            padding-bottom: 39.37%; /* THE FIX: Perfect 16:9 ratio */
+            /* 1. This matches your --text-width exactly */
+            max-width: var(--text-width); 
+            
+            /* 2. 'auto' centers it, '2rem 0' gives it space top/bottom */
+            margin: 2rem auto;           
+            
+            /* 3. This is the magic 16:9 number that removes black bars */
+            padding-bottom: 56.25%; 
+            
             height: 0;
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            background: #000; /* Makes it look cleaner while loading */
         }
 
         .video-container iframe {
