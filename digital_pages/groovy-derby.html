@@ -200,28 +200,31 @@
         <div class="content-block">
             <h2>The Challenge</h2>
             <p>
-                One of the primary symptoms of Parkinson’s disease is tremors in a dominant arm. Tremors are defined as rhythmic oscillations 
-                in the frequency range of 3-5Hz. The treatment for these tremors is typically a dopamine boost, which transitions the patient 
-                from the “Off” state to the “On” state. However, if too much dopamine is provided, an additional symptom call dyskinesia occurs. 
-                This is characterized by rhythmic dance-like movements in the frequency range of 5-7Hz. It is essential to have this information 
-                to properly medicate a patient so that the patient is “On”, but not too “On”.
+                The concept for my project was inspired by the co-op game It Takes Two, where two game characters set out on a journey that is filled 
+                with cooperative minigames and obstacles which they have to overcome. As such, I wanted to create a minigame where the game is only 
+                “playable” if two people are communicating and working together. Combining with themes from arcade games such as a limited number 
+                of lives and endless generative spites, I created Groovy Derby where two players have to input the correct order of key combinations 
+                in order to score points in the game. In addition, I created two controllers that mapped to keyboard inputs using Arduino. 
             </p>
 
             <h2>The Approach</h2>
             <p>
-                To implement this diagnostic tool, I focused on real-time frequency analysis of accelerometer data to distinguish between different 
-                motor conditions. The process begins with high-speed sampling of the Circuit Playground’s onboard accelerometer. By calculating the 
-                3D vector magnitude √(x<sup>2</sup> + y<sup>2</sup> + z<sup>2</sup>), I’m able to capture the total intensity of a tremor regardless 
-                of the device's orientation. I then pass this raw signal through a Fast Fourier Transform (FFT) pipeline. To ensure data integrity, 
-                I utilized <code>FFT.dcRemoval()</code> to eliminate the gravity constant and applied a Hamming window to minimize spectral leakage before computing 
-                the magnitudes across the frequency spectrum.
-
+                I started by focusing on the visual feel of the game, since I wanted the characters to move smoothly and feel animated rather than stiff. 
+                I broke each character’s movement into small pieces and designed the animation frame by frame, which helped the motions feel more natural 
+                even though the characters stayed in place. This approach made the interactions between the two players feel coordinated and expressive, 
+                and it relieved a lot of my initial worry about the game looking blocky or unfinished.
             </p>
             <p>
-                Once I had the frequency and magnitude, I used simple threshold checks to classify the motion into one of three states. Based on the 
-                detected condition, I updated both the onboard NeoPixels and an LCD screen to give immediate visual feedback. A button toggle controlled 
-                whether the system was active, making it easy to start and stop detection without resetting the board. Overall, the flow was: collect motion 
-                data → run FFT → detect the dominant movement pattern → display the result, keeping everything responsive and easy to interpret in real time.
+                Next, I worked on the game logic and player interaction. I built player and creature classes that checked user input against the required 
+                button combinations in real time. If the input matched, the creature’s sequence would shrink; if it didn’t, the creature kept moving closer 
+                until a life was lost. This made the gameplay feel responsive and kept the rules simple and clear. I also reused tools like Canva, free sound 
+                effects, and custom fonts to quickly polish the game without spending time reinventing assets.
+            </p>
+            <p>
+                Finally, I extended the project to a physical setup by connecting an Arduino button box to p5.js using serial communication. The Arduino handled 
+                all button inputs and sent signals directly to p5, where I mapped them to game actions and state changes. I had to carefully manage button on/off 
+                states to avoid accidental double inputs, but once that was resolved, the physical controls worked smoothly. Overall, given the short timeline, 
+                I’m happy with how the visuals, gameplay, and physical interaction came together, and I see clear paths for future improvements.
             </p>
         </div>
 
