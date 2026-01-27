@@ -192,30 +192,10 @@
         <img src="../images/snake-flower.jpg" alt="Snake Flower" class="full-width-img">
 
         <div class="content-block">
-            <h2>The Challenge</h2>
+            <h2>Description</h2>
             <p>
-                One of the primary symptoms of Parkinson’s disease is tremors in a dominant arm. Tremors are defined as rhythmic oscillations 
-                in the frequency range of 3-5Hz. The treatment for these tremors is typically a dopamine boost, which transitions the patient 
-                from the “Off” state to the “On” state. However, if too much dopamine is provided, an additional symptom call dyskinesia occurs. 
-                This is characterized by rhythmic dance-like movements in the frequency range of 5-7Hz. It is essential to have this information 
-                to properly medicate a patient so that the patient is “On”, but not too “On”.
-            </p>
-
-            <h2>The Approach</h2>
-            <p>
-                To implement this diagnostic tool, I focused on real-time frequency analysis of accelerometer data to distinguish between different 
-                motor conditions. The process begins with high-speed sampling of the Circuit Playground’s onboard accelerometer. By calculating the 
-                3D vector magnitude √(x<sup>2</sup> + y<sup>2</sup> + z<sup>2</sup>), I’m able to capture the total intensity of a tremor regardless 
-                of the device's orientation. I then pass this raw signal through a Fast Fourier Transform (FFT) pipeline. To ensure data integrity, 
-                I utilized <code>FFT.dcRemoval()</code> to eliminate the gravity constant and applied a Hamming window to minimize spectral leakage before computing 
-                the magnitudes across the frequency spectrum.
-
-            </p>
-            <p>
-                Once I had the frequency and magnitude, I used simple threshold checks to classify the motion into one of three states. Based on the 
-                detected condition, I updated both the onboard NeoPixels and an LCD screen to give immediate visual feedback. A button toggle controlled 
-                whether the system was active, making it easy to start and stop detection without resetting the board. Overall, the flow was: collect motion 
-                data → run FFT → detect the dominant movement pattern → display the result, keeping everything responsive and easy to interpret in real time.
+                Hand-crafted model of a coiled green tree python with sculptured flowers. Super glue held the pieces together. 
+                Utilized complementary colors between the flowers and snake to make the subjects bolder. 
             </p>
         </div>
 

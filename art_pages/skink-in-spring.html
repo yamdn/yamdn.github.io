@@ -192,41 +192,11 @@
         <img src="../images/skink.jpg" alt="skink" class="full-width-img">        
 
         <div class="content-block">
-            <h2>The Challenge</h2>
+            <h2>Description</h2>
             <p>
-                One of the primary symptoms of Parkinson’s disease is tremors in a dominant arm. Tremors are defined as rhythmic oscillations 
-                in the frequency range of 3-5Hz. The treatment for these tremors is typically a dopamine boost, which transitions the patient 
-                from the “Off” state to the “On” state. However, if too much dopamine is provided, an additional symptom call dyskinesia occurs. 
-                This is characterized by rhythmic dance-like movements in the frequency range of 5-7Hz. It is essential to have this information 
-                to properly medicate a patient so that the patient is “On”, but not too “On”.
+                Canvas painting of blue tongue skink from reference pictures decorated with various 
+                colored flora highlighted with white marker and experimented with the pop-art style. 
             </p>
-
-            <h2>The Approach</h2>
-            <p>
-                To implement this diagnostic tool, I focused on real-time frequency analysis of accelerometer data to distinguish between different 
-                motor conditions. The process begins with high-speed sampling of the Circuit Playground’s onboard accelerometer. By calculating the 
-                3D vector magnitude √(x<sup>2</sup> + y<sup>2</sup> + z<sup>2</sup>), I’m able to capture the total intensity of a tremor regardless 
-                of the device's orientation. I then pass this raw signal through a Fast Fourier Transform (FFT) pipeline. To ensure data integrity, 
-                I utilized <code>FFT.dcRemoval()</code> to eliminate the gravity constant and applied a Hamming window to minimize spectral leakage before computing 
-                the magnitudes across the frequency spectrum.
-
-            </p>
-            <p>
-                Once I had the frequency and magnitude, I used simple threshold checks to classify the motion into one of three states. Based on the 
-                detected condition, I updated both the onboard NeoPixels and an LCD screen to give immediate visual feedback. A button toggle controlled 
-                whether the system was active, making it easy to start and stop detection without resetting the board. Overall, the flow was: collect motion 
-                data → run FFT → detect the dominant movement pattern → display the result, keeping everything responsive and easy to interpret in real time.
-            </p>
-        </div>
-
-        <div class="content-block">
-            <h2>The Outcome</h2>
-            <p>
-                The device successfully detected and classified Parkinson’s-related movement patterns in real time using motion data analysis. It provided 
-                immediate visual feedback through onboard LEDs and an LCD screen, making the results easy to understand at a glance. This demonstrated that 
-                wearable sensor data can be used effectively to recognize and communicate different movement states in a simple and accessible way.
-            </p>
-        </div>
 
         <div class="next-project">
             <span class="meta-label">Next Project</span>
