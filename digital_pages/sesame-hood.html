@@ -228,28 +228,27 @@
 
             <h2>The Approach</h2>
             <p>
-                To implement this diagnostic tool, I focused on real-time frequency analysis of accelerometer data to distinguish between different 
-                motor conditions. The process begins with high-speed sampling of the Circuit Playground’s onboard accelerometer. By calculating the 
-                3D vector magnitude √(x<sup>2</sup> + y<sup>2</sup> + z<sup>2</sup>), I’m able to capture the total intensity of a tremor regardless 
-                of the device's orientation. I then pass this raw signal through a Fast Fourier Transform (FFT) pipeline. To ensure data integrity, 
-                I utilized <code>FFT.dcRemoval()</code> to eliminate the gravity constant and applied a Hamming window to minimize spectral leakage before computing 
-                the magnitudes across the frequency spectrum.
-
+                I began the project by sketching three different designs on paper and refining them with measurements after getting feedback from 
+                my instructor and peers. To better visualize the concepts, I created three prototypes out of cardboard and hot glue, starting with 
+                a small, quick version and then moving to larger, life-size models. This allowed me to see where details could be added, how the 
+                structure would fit together, and how Sesame might interact with the space.
             </p>
             <p>
-                Once I had the frequency and magnitude, I used simple threshold checks to classify the motion into one of three states. Based on the 
-                detected condition, I updated both the onboard NeoPixels and an LCD screen to give immediate visual feedback. A button toggle controlled 
-                whether the system was active, making it easy to start and stop detection without resetting the board. Overall, the flow was: collect motion 
-                data → run FFT → detect the dominant movement pattern → display the result, keeping everything responsive and easy to interpret in real time.
+                Once the prototypes were finalized, I moved into Rhino to create the digital design. The cat house included two window panels with 
+                cat and fish patterns, a roof panel with bubbly circular designs, a front panel featuring Sesame’s name, and a back panel with slots 
+                for organizing her toys. The structural panels were CNC cut with a dog-bone joint system for easy assembly, and the hammock was 
+                designed in a playful cat shape. After cutting, I assembled all the pieces, reinforced them with glue, and finished the house with 
+                wood oil to preserve it. The result was a functional, visually engaging cat house tailored to Sesame’s comfort and play needs.    
             </p>
         </div>
 
         <div class="content-block">
             <h2>The Outcome</h2>
             <p>
-                The device successfully detected and classified Parkinson’s-related movement patterns in real time using motion data analysis. It provided 
-                immediate visual feedback through onboard LEDs and an LCD screen, making the results easy to understand at a glance. This demonstrated that 
-                wearable sensor data can be used effectively to recognize and communicate different movement states in a simple and accessible way.
+                Sesame immediately took to her new cat house, curling up in the cozy nook and lounging happily in the hammock. To make it even more 
+                comfortable, I added a heating pad so the space would feel warm and soft instead of hard. The toy organizer helped keep her favorite 
+                toys neatly in place, making playtime easier to manage. Overall, the cat house combined functionality, comfort, and playful design, 
+                creating a space that Sesame genuinely enjoys and that reflects her personality.  
             </p>
         </div>
 
