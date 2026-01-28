@@ -194,37 +194,36 @@
         <div class="content-block">
             <h2>The Challenge</h2>
             <p>
-                One of the primary symptoms of Parkinson’s disease is tremors in a dominant arm. Tremors are defined as rhythmic oscillations 
-                in the frequency range of 3-5Hz. The treatment for these tremors is typically a dopamine boost, which transitions the patient 
-                from the “Off” state to the “On” state. However, if too much dopamine is provided, an additional symptom call dyskinesia occurs. 
-                This is characterized by rhythmic dance-like movements in the frequency range of 5-7Hz. It is essential to have this information 
-                to properly medicate a patient so that the patient is “On”, but not too “On”.
+                Customers at Taichi Bubble Tea were often confused about where to return their food trays after finishing their drinks, and delivery 
+                drivers were unsure where to pick up orders. This led to frequent questions at the counter and disrupted the flow of the space. The 
+                shop wanted signage that could solve this problem quickly and clearly, while still matching their brand. They specifically asked for 
+                a fun, cartoon-style design that followed the panda theme of the store, so the signs would feel welcoming and fit naturally into the 
+                environment rather than looking purely instructional.
             </p>
 
             <h2>The Approach</h2>
             <p>
-                To implement this diagnostic tool, I focused on real-time frequency analysis of accelerometer data to distinguish between different 
-                motor conditions. The process begins with high-speed sampling of the Circuit Playground’s onboard accelerometer. By calculating the 
-                3D vector magnitude √(x<sup>2</sup> + y<sup>2</sup> + z<sup>2</sup>), I’m able to capture the total intensity of a tremor regardless 
-                of the device's orientation. I then pass this raw signal through a Fast Fourier Transform (FFT) pipeline. To ensure data integrity, 
-                I utilized <code>FFT.dcRemoval()</code> to eliminate the gravity constant and applied a Hamming window to minimize spectral leakage before computing 
-                the magnitudes across the frequency spectrum.
+                I began the project by meeting with the shop owner to discuss the purpose, placement, and size of the hanging counter signs. Together, 
+                we decided on two formats: 16 × 20 inches and 10 × 20 inches. Before painting, I sketched my ideas directly on the canvas and researched 
+                existing shop signage for inspiration. I shared these early sketches with the owner and adjusted the designs based on their feedback. 
+                While I was given artistic freedom, I followed the store’s panda theme and used a spring-inspired color palette of pink, yellow, and 
+                green to match the shop’s playful atmosphere.
 
             </p>
             <p>
-                Once I had the frequency and magnitude, I used simple threshold checks to classify the motion into one of three states. Based on the 
-                detected condition, I updated both the onboard NeoPixels and an LCD screen to give immediate visual feedback. A button toggle controlled 
-                whether the system was active, making it easy to start and stop detection without resetting the board. Overall, the flow was: collect motion 
-                data → run FFT → detect the dominant movement pattern → display the result, keeping everything responsive and easy to interpret in real time.
+                Once the designs were approved, I hand-painted all four signs: Order Here, Take Out, Return Station, and Clean Up. I focused on keeping the 
+                visuals clear and readable from a distance, since the signs would be hanging above the counter. After installation, the owner shared that 
+                the signs helped employees direct customers more easily and improved how people moved through the space. The process emphasized collaboration, 
+                clarity, and making functional signage that still felt fun and welcoming.            
             </p>
         </div>
 
         <div class="content-block">
             <h2>The Outcome</h2>
             <p>
-                The device successfully detected and classified Parkinson’s-related movement patterns in real time using motion data analysis. It provided 
-                immediate visual feedback through onboard LEDs and an LCD screen, making the results easy to understand at a glance. This demonstrated that 
-                wearable sensor data can be used effectively to recognize and communicate different movement states in a simple and accessible way.
+                The final signs successfully reduced confusion around tray returns and order pickup, making it easier for customers and delivery drivers to 
+                navigate the space. The playful, panda-themed designs fit naturally into the shop’s environment and were well received by both the owner and 
+                staff. Overall, the signage improved the flow of the store while maintaining a friendly and welcoming atmosphere.            
             </p>
         </div>
 
