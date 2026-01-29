@@ -206,28 +206,25 @@
 
             <h2>The Approach</h2>
             <p>
-                To implement this diagnostic tool, I focused on real-time frequency analysis of accelerometer data to distinguish between different 
-                motor conditions. The process begins with high-speed sampling of the Circuit Playground’s onboard accelerometer. By calculating the 
-                3D vector magnitude √(x<sup>2</sup> + y<sup>2</sup> + z<sup>2</sup>), I’m able to capture the total intensity of a tremor regardless 
-                of the device's orientation. I then pass this raw signal through a Fast Fourier Transform (FFT) pipeline. To ensure data integrity, 
-                I utilized <code>FFT.dcRemoval()</code> to eliminate the gravity constant and applied a Hamming window to minimize spectral leakage before computing 
-                the magnitudes across the frequency spectrum.
-
-            </p>
-            <p>
-                Once I had the frequency and magnitude, I used simple threshold checks to classify the motion into one of three states. Based on the 
-                detected condition, I updated both the onboard NeoPixels and an LCD screen to give immediate visual feedback. A button toggle controlled 
-                whether the system was active, making it easy to start and stop detection without resetting the board. Overall, the flow was: collect motion 
-                data → run FFT → detect the dominant movement pattern → display the result, keeping everything responsive and easy to interpret in real time.
+                My partner and I started by making a mood board of things that represent both the beauty and ugliness of the environment. We 
+                were drawn to the way crystals and rocks grow, and that interest naturally expanded to seashells, especially abalone, which 
+                have unique colors and layered growth. When we looked closely at abalone shells, the surface reminded us of oil spills, which 
+                inspired us to explore the contrast between natural beauty and environmental damage. We then sketched several ideas and eventually 
+                settled on a curved shell form with a slimy, oil-like look. The shell was 3D printed using a greenish-blue shiny filament. 
+                Inside, the surface slopes slightly so the soap can be scraped and drained after use. The crystal element was resin printed so we 
+                could achieve more intricate details and exaggerate the sharp, almost painful quality of nature.
             </p>
         </div>
 
         <div class="content-block">
             <h2>The Outcome</h2>
             <p>
-                The device successfully detected and classified Parkinson’s-related movement patterns in real time using motion data analysis. It provided 
-                immediate visual feedback through onboard LEDs and an LCD screen, making the results easy to understand at a glance. This demonstrated that 
-                wearable sensor data can be used effectively to recognize and communicate different movement states in a simple and accessible way.
+                We presented the project at the end-of-year show, displaying all of our prototypes alongside the plastic waste generated during the 
+                process, which was later recycled. With over 200 people in attendance, visitors were able to touch and interact with the form and 
+                textures of the piece, helping them better understand both the material qualities and the environmental message behind the project. 
+                Many viewers were drawn to the contrast between the glossy shell and the sharp crystal, which often sparked conversations about 
+                pollution and ocean cleanup. Being able to physically handle the object encouraged people to slow down and engage more thoughtfully 
+                with the design. Overall, the project succeeded in turning a functional soap dish into a visual and physical reminder of environmental impact.
             </p>
         </div>
 
