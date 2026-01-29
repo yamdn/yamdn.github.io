@@ -206,44 +206,46 @@
         <div class="video-container">
             <iframe src="https://www.youtube.com/embed/S2J1xz3-OOo" title="Exoskin Arm Brand" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
-        
-        Visit the <a href="https://github.com/yamdn/Embedded-Challenge-Parkinson-Disease/tree/main" target="_blank">GitHub repo↗</a> for this project
 
         <div class="content-block">
             <h2>The Challenge</h2>
             <p>
-                One of the primary symptoms of Parkinson’s disease is tremors in a dominant arm. Tremors are defined as rhythmic oscillations 
-                in the frequency range of 3-5Hz. The treatment for these tremors is typically a dopamine boost, which transitions the patient 
-                from the “Off” state to the “On” state. However, if too much dopamine is provided, an additional symptom call dyskinesia occurs. 
-                This is characterized by rhythmic dance-like movements in the frequency range of 5-7Hz. It is essential to have this information 
-                to properly medicate a patient so that the patient is “On”, but not too “On”.
+                In this project, the goal was to experiment with Grasshopper, a parametric design tool within Rhino, while creating something decorative 
+                and wearable. I decided to design an arm band because wearable objects introduce additional challenges, such as fit, comfort, and flexibility, 
+                which are not always easy to account for in digital design. Influenced by the structural logic of exoskeletons, Exoskin was named for its 
+                snuggle fit against one part of the user's body. This concept guided both the visual language and the structural form of the arm bands. 
+                In the end, I created three different designs with multiple prototypes that were flexible and could comfortably fit around my arm.
             </p>
 
             <h2>The Approach</h2>
             <p>
-                To implement this diagnostic tool, I focused on real-time frequency analysis of accelerometer data to distinguish between different 
-                motor conditions. The process begins with high-speed sampling of the Circuit Playground’s onboard accelerometer. By calculating the 
-                3D vector magnitude √(x<sup>2</sup> + y<sup>2</sup> + z<sup>2</sup>), I’m able to capture the total intensity of a tremor regardless 
-                of the device's orientation. I then pass this raw signal through a Fast Fourier Transform (FFT) pipeline. To ensure data integrity, 
-                I utilized <code>FFT.dcRemoval()</code> to eliminate the gravity constant and applied a Hamming window to minimize spectral leakage before computing 
-                the magnitudes across the frequency spectrum.
-
+                I began by sketching several ideas for decorative objects, initially exploring forms like a flower vase before shifting toward an arm band. 
+                The flowing, repeating patterns reminded me of vines and skeletal structures, which aligned well with the Exoskin concept. Using Grasshopper, 
+                I built the arm band form with basic components such as arcs, series, rotations, and pipes, allowing the design to grow and repeat in an organic, 
+                bone-like way. After establishing the general shape, I printed three small prototypes to test sizing and fit on my arm.
             </p>
             <p>
-                Once I had the frequency and magnitude, I used simple threshold checks to classify the motion into one of three states. Based on the 
-                detected condition, I updated both the onboard NeoPixels and an LCD screen to give immediate visual feedback. A button toggle controlled 
-                whether the system was active, making it easy to start and stop detection without resetting the board. Overall, the flow was: collect motion 
-                data → run FFT → detect the dominant movement pattern → display the result, keeping everything responsive and easy to interpret in real time.
+                To support the wearable nature of the piece, I chose TPU filament instead of PLA so the arm bands could bend and stretch when worn. Grasshopper’s 
+                parametric interface made it easy to adjust dimensions and thickness based on feedback from the prototypes. After refining the design, I printed 
+                three final arm bands that could be worn and accessorized, successfully combining computational design, material exploration, and the exoskeleton-inspired 
+                concept behind Exoskin.
             </p>
         </div>
 
         <div class="content-block">
             <h2>The Outcome</h2>
             <p>
-                The device successfully detected and classified Parkinson’s-related movement patterns in real time using motion data analysis. It provided 
-                immediate visual feedback through onboard LEDs and an LCD screen, making the results easy to understand at a glance. This demonstrated that 
-                wearable sensor data can be used effectively to recognize and communicate different movement states in a simple and accessible way.
+                Through this project, I gained a much stronger understanding of how Grasshopper functions and how it can be combined with Rhino to create 
+                parametric designs. While I produced three final arm bands, the process showed me that there were almost endless possibilities for 
+                experimenting with different shapes, sizes, and surface textures by adjusting parameters in Grasshopper. Working with TPU also helped me 
+                better understand material choice, especially when designing wearable objects that need flexibility and comfort. Overall, the project 
+                encouraged me to think more iteratively and explore how computational design can quickly adapt to both aesthetic and functional needs.
             </p>
+        </div>
+
+        <div class="next-project">
+            <span class="meta-label">End of Digital Design Projects</span>
+            <a href="/yamdn.github.io/index.html#art" class="next-link">View the Art Gallery →</a>
         </div>
 
     </article>
