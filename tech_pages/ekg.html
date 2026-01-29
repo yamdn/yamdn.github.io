@@ -184,36 +184,52 @@
         </header>
 
         <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vS6dCxNnpv0PfWYPHKBzM1B-tCp4Vg6TtodZzflcG0MeIwvB6NfuyD8orcCDV3px9EVykHSIH7jnBq8/pubembed?start=true&loop=true&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-        Visit the <a href="https://github.com/yamdn/EKG-Electronics" target="_blank">GitHub repo↗</a> for this project!
-
-
-
+            Note: Due to equipment limitations, we soldered my partner’s PCB in the lab. However, each of us independently designed and had our own PCB boards separately.
         <div class="content-block">
             <h2>The Challenge</h2>
             <p>
-                Urban planning data is often fragmented across multiple government legacy systems. My goal was to create a unified pipeline that could scrape, clean, and visualize traffic patterns in real-time.
+                The goal of this project was to design an electronic system capable of measuring a person’s heartbeat, resulting in a DIY EKG circuit. 
+                To achieve this, we worked with industry-standard tools such as Cadence and Altium to better understand the full PCB development process.
+                We began with circuit simulation and testing in Cadence, then moved on to PCB design in Altium before sending the boards out for fabrication. 
+                Through this process, we gained hands-on experience with SMD soldering, real-world testing using our own heartbeats, and ongoing validation 
+                to ensure the circuit functioned accurately and safely.
             </p>
 
             <h2>The Approach</h2>
             <p>
-                I started by building a scraper using <code>BeautifulSoup</code>. The primary challenge was handling the unstructured CSV data coming from the municipal servers.
+                The project process was divided into three main stages: simulation, design, and testing. We began in Cadence by simulating the key parts of 
+                the EKG circuit, including T-notch filters to reduce unwanted noise and a DRL circuit to strengthen the heartbeat signal. During this stage, 
+                we experimented with different component values and tested how each change affected the signal to make sure the circuit behaved as expected. 
+                We also simulated other essential components such as instrumentation amplifiers and high-pass filters to further clean and amplify the signal.
             </p>
             <p>
-                To ensure the data was accessible for non-technical stakeholders, I focused on high-contrast visualizations.
+                Once the simulations were working reliably, we moved to Altium to design the PCB based on our tested circuit. In Altium, we conducted basic 
+                market research on available components and selected parts that were both affordable and reliable by reviewing their datasheets. After choosing 
+                the individual components, we routed and connected them on the board and poured the appropriate conductive layers. Altium’s 3D view also allowed 
+                us to check component placement and verify that everything was positioned and connected correctly before manufacturing.
+            </p>
+            <p>
+                After finalizing the design, the boards were sent to a manufacturer for fabrication. Once we received the PCBs, we began soldering the surface-mount 
+                components. Working with a partner, we took turns practicing SMD soldering and testing the circuit using oscilloscopes and our own heartbeats to 
+                validate the design in real-world conditions.
             </p>
         </div>
 
         <div class="content-block">
             <h2>The Outcome</h2>
             <p>
-                The final script reduced data processing time by 40%. This project is currently being used by the graduate research team at [University Name] to track rush hour congestion.
+                Although my partner’s board had routing issues that were difficult to fix after fabrication, the project was still a valuable learning experience. 
+                Through circuit simulation in Cadence and PCB design in Altium, I gained a strong understanding of the full electronics workflow, from concept to manufacturing. 
+                I especially enjoyed the SMD soldering process and learning how to troubleshoot issues that could be addressed after fabrication. Testing the circuit with 
+                oscilloscopes and real heartbeat signals helped connect theory to real-world behavior, and the experience gave me a deeper appreciation for PCB manufacturing 
+                constraints, component selection, and the importance of careful validation throughout the design process.            
             </p>
         </div>
 
-        <!-- <div class="next-project">
-            <span class="meta-label">Next Project</span>
-            <a href="#" class="next-link">The Urban Thesis →</a>
-        </div> -->
+        <div class="next-project">
+            <span class="meta-label">End of Technical Projects</span>
+            <a href="./index.html#digital" class="next-link">View My Digital Design Projects →</a>
+        </div>
 
     </article>
 
