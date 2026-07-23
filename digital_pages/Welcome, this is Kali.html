@@ -189,7 +189,7 @@
     <article class="case-study">
         
         <header class="project-header">
-            <h1 class="project-title">Groovy Derby</h1>
+            <h1 class="project-title">Welcome, this is Kali</h1>
             
             <div class="project-meta">
                 <div>
@@ -198,62 +198,49 @@
                 </div>
                 <div>
                     <span class="meta-label">Tools</span>
-                     p5.js, Arduino, Laser Cutting, Soldering 
+                     p5.js, ml5.js, Canva
                 </div>
             </div>
         </header>
 
         <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/M6ylyJVNe4o" title="Groovy Derby Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe width="1133" height="594" src="https://www.youtube.com/embed/hG1VzE5rFn0" title="Welcome, this is Kali Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
-        
-        Try out the game for yourself! Play it on <a href="https://editor.p5js.org/yamdn/sketches/VcpHd4POY" target="_blank"> P5.js↗</a> !
+
+        Try out the experience for yourself! Hosted on <a href="https://yamdn.github.io/Creative-Coding-Lab/ProjectB/" target="_blank"> Github↗</a>!
 
         <div class="content-block">
             <h2>The Challenge</h2>
             <p>
-                The concept for my project was inspired by the co-op game It Takes Two, where two game characters set out on a journey that is filled 
-                with cooperative minigames and obstacles which they have to overcome. As such, I wanted to create a minigame where the game is only 
-                “playable” if two people are communicating and working together. Combining with themes from arcade games such as a limited number 
-                of lives and endless generative spites, I created Groovy Derby where two players have to input the correct order of key combinations 
-                in order to score points in the game. In addition, I created two controllers that mapped to keyboard inputs using Arduino. 
+                Kali is a speculative design project that imagines a dystopian near-future through the interface of a retro-styled computer operating system, where users navigate popup windows and icons, earn tokens through a computer-vision rock-paper-scissors game, and spend them to unlock content like news, music, and ad-blockers. 
+                
+                The familiar retro aesthetic makes the underlying picture more jarring: a future where access to information and basic functionality is monetized and mediated by propaganda, with the commentary on social injustice emerging through exploration rather than being stated outright. The visual designs were created in Canva and exported as PNGs, while the interactive logic, hitbox mapping, state management, and token system were built in p5.js.
             </p>
 
             <h2>The Approach</h2>
             <p>
-                I started by focusing on the visual feel of the game, since I wanted the characters to move smoothly and feel animated rather than stiff. 
-                I broke each character’s movement into small pieces and designed the animation frame by frame, which helped the motions feel more natural 
-                even though the characters stayed in place. This approach made the interactions between the two players feel coordinated and expressive, 
-                and it relieved a lot of my initial worry about the game looking blocky or unfinished.
+                First, I designed and gain visual direction for the project. The graphics were built in Canva, drawing on Windows 3.1 and other retro computing aesthetics as reference. The choice was deliberate rather than nostalgic. By rendering the future through visual language that already reads as old and outdated, the project creates a kind of hyperreality, imagining how people in the future might look back at the technology of the past and asking what feels familiar, clunky, or quietly sinister about the systems we use now.
             </p>
             <p>
-                Next, I worked on the game logic and player interaction. I built player and creature classes that checked user input against the required 
-                button combinations in real time. If the input matched, the creature’s sequence would shrink; if it didn’t, the creature kept moving closer 
-                until a life was lost. This made the gameplay feel responsive and kept the rules simple and clear. I also reused tools like Canva, free sound 
-                effects, and custom fonts to quickly polish the game without spending time reinventing assets.
+                I continued by building the mechanics of the project. The second phase combined those static graphics with interaction logic in p5.js, mapping hitboxes onto the imagery and layering in the systems that carry the project's argument. That included a computer-vision rock-paper-scissors game for earning tokens, a paywall gating access to features, intrusive popup ads, and paid unlocks for things that should be ordinary, listening to music, drawing, and reading the news. Each mechanic was chosen to make the commentary something users experience through friction rather than read as a statement.
             </p>
             <p>
-                Finally, I extended the project to a physical setup by connecting an Arduino button box to p5.js using serial communication. The Arduino handled 
-                all button inputs and sent signals directly to p5, where I mapped them to game actions and state changes. I had to carefully manage button on/off 
-                states to avoid accidental double inputs, but once that was resolved, the physical controls worked smoothly. Overall, given the short timeline, 
-                I’m happy with how the visuals, gameplay, and physical interaction came together, and I see clear paths for future improvements.
+                Lastly, I playtested and continued to refine the project. The final phase involved putting the project in front of human playtesters and watching how they actually moved through it. Observing where people got stuck, what they discovered on their own, and what they missed entirely drove successive rounds of refinement to the interactions, pacing, and discoverability, shaping the project into something that communicated its message through exploration rather than instruction.
             </p>
         </div>
 
         <div class="content-block">
             <h2>The Outcome</h2>
             <p>
-                The final outcome was a playful, cooperative game that people genuinely enjoyed interacting with, both visually and physically. Players responded 
-                positively to the character animations and the shared gameplay, often smiling, laughing, and communicating as they tried to match movements and defeat 
-                the approaching orbs together. The physical button box made the experience feel more engaging and arcade-like, which encouraged participation even from 
-                people who don’t usually play games. Overall, the project succeeded in creating a fun, approachable experience that brought people together and sparked 
-                curiosity and enjoyment from the audience.
+                The result was a fully working interactive experience that people could actually explore rather than just read about, shown to the class and at the IMA end-of-semester show. Users moved through the retro desktop discovering features on their own, earning tokens through the rock-paper-scissors game, and running into the paywalls, ads, and locked functionality that carried the project's argument, which meant the critique of a monetized, propaganda-mediated future landed through friction and discovery rather than being stated outright. 
+                
+                The project also evolved substantially from the original proposal, which began as an audio piece built around radio recordings before pivoting to an interactive game, and it ended up delivering the same message about social injustice more effectively than the original concept would have.
             </p>
         </div>
 
         <div class="next-project">
             <span class="meta-label">Next Project</span>
-            <a href="../digital_pages/sesame-hood.html" class="next-link">Sesame's Hood →</a>
+            <a href="../digital_pages/groovy-derby.html" class="next-link">Groovy Derby →</a>
         </div>
 
     </article>
